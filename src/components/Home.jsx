@@ -10,7 +10,7 @@ export const Home = () => {
     const res = await fetch("https://dummyjson.com/products");
     const data = await res.json();
     setProducts(data?.products);
-    console.log(data?.products)
+    console.log(data?.products);
   };
   useEffect(() => {
     getProducts();
@@ -22,7 +22,7 @@ export const Home = () => {
         <h2 className="text-2xl font-bold mb-4 text-center">Products</h2>
       </div>
       <div className="flex flex-wrap gap-5 justify-center">
-        <Products products={products} key={products.id}/>
+        <Products products={products} />
       </div>
     </section>
   );
