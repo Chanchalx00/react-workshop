@@ -2,7 +2,7 @@ import React from 'react'
 import {useNavigate} from 'react-router-dom'
 
 export const Products = ({products}) => {
-  const naviagte = useNavigate();
+  const naviagate = useNavigate();
   return (
     <>
       {products.map((product) => (
@@ -18,7 +18,7 @@ export const Products = ({products}) => {
           <p>{product?.description}</p>
           <div>
             <button onClick={()=>{
-              naviagte('/productdetails')
+              naviagate(`/productdetails?id=${product?.id}`)
             }}>Show Details</button>
           </div>
         </div>
