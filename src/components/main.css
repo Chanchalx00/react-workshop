@@ -49,7 +49,6 @@
   margin-bottom: 1rem;
 }
 
-
 .product-card p {
   font-size: 1rem;
   font-weight: 600;
@@ -58,9 +57,9 @@
 }
 
 button {
-  padding: 10px 20px;
-  margin: 5px;
-  font-size: 1rem;
+  padding: 5px 5px;
+  margin: 1px;
+  font-size: 1px;
   background-color: #430761;
   color: #ede6e6;
   border: none;
