@@ -5,6 +5,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { ProductDetails } from "./ProductDetails.jsx";
 import { LoginForm } from "./components/LoginForm.jsx";
 import { ProtectedRoute } from "./components/ProtectedRoute.jsx";
+import { Cart } from "./components/Cart.jsx";
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
 
@@ -42,6 +43,14 @@ function App() {
           element={
             <ProtectedRoute isLoggedIn={isLoggedIn}>
               <ProductDetails />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/cart"
+          element={
+            <ProtectedRoute isLoggedIn={isLoggedIn}>
+              <Cart />
             </ProtectedRoute>
           }
         />

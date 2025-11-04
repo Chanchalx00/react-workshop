@@ -22,9 +22,25 @@ export const ProductDetails = () => {
     if (id) getProducts();
   }, [id]);
 
+  const handleAddtocart = ()=>{
+   const cart = JSON.parse(localStorage.getItem("cart")) || [];
+   const alreadyexist = cart.find((item)=>item.id == product.id);
+  if(!alreadyexist){
+    cart.push({
+      id: product.id,
+      title: product.title,
+      price: product.price,
+      image: product.images[0],
+    });
+    localStorage.setItem("cart", JSON.stringify(cart));
+    alert("Product added to cart")
+  }else{
+    alert("Product already exist in cart")
+  }
+  }
    if (loading) {return (
     <div className="py-8 px-12 min-h-screen bg-linear-to-b from-[#2e005f] via-[#d47cda] to-[#fcd17d] text-white text-xl justify-center flex items-center ">
-      <div class="mr-2 w-5 h-5 border-4 border-gray-300 border-t-fuchsia-900 rounded-full animate-spin"></div>
+      <div className="mr-2 w-5 h-5 border-4 border-gray-300 border-t-fuchsia-900 rounded-full animate-spin"></div>
       Loading...
     </div>
   );}
@@ -52,7 +68,7 @@ export const ProductDetails = () => {
           <p>Price: ${product?.price}</p>
           <p>{product?.description}</p>
           <div>
-            <button>Add To Cart</button>
+            <button onClick={handleAddtocart}>Add To Cart</button>
           </div>
         </div>
       </div>

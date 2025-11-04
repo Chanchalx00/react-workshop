@@ -40,6 +40,12 @@ export const Header = ({ onLogout }) => {
           >
             Profile
           </NavLink>
+          <NavLink
+            to="/cart"
+            className={({ isActive }) => (isActive ? "text-sky-500" : "")}
+          >
+            Cart
+          </NavLink>
           <button onClick={handleLogout}>Logout</button>
         </div>
       </nav>
